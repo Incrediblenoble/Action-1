@@ -1,9 +1,9 @@
-name: first workflow experience
+name: Generate ASCII Artwork
 
 on: push
 
 jobs:
-  first_jobs:
+  ascii_jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -12,15 +12,17 @@ jobs:
       - name: Install cowsay package
         run: sudo apt-get update && sudo apt-get install cowsay -y
 
-      - name: List and Read file
-        run: |
-          echo "Welcome to the first workflow experience"
-          ls -ltra
-          cat README.md
-
-      - name: Generate ASCII Art
+      - name: Execute Cowsay CMD
         run: cowsay -f dragon "Run for cover, i am a DRAGON....RAWR" >> dragon.txt
 
+      - name: Test File Exists
+        run: grep -i "dragon" dragon.txt
+
+      - name: Read File
+        run: cat dragon.txt
+
+      - name: Checkout Repo Files
+        run: ls
       # - name: List files
       #   run: ls -a
 
