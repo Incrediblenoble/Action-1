@@ -28,6 +28,15 @@ jobs:
           name: dragon-artifact
           path: dragon.txt
 
+      - name: Check if dragon.txt is a file
+        run: |
+          if [ -f dragon.txt ]; then
+            echo "dragon.txt is a file"
+          else
+            echo "Error: dragon.txt is not a file"
+            exit 1
+          fi
+
       - name: Test file Exists
         run: grep -i "dragon" dragon.txt
 
