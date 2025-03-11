@@ -26,7 +26,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dragon-artifact
-          path: dragon.txt
+          path: .
 
       - name: Check if dragon.txt is a file
         run: |
@@ -48,7 +48,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dragon-artifact
-          path: dragon.txt
+          path: .
 
       - name: Read file
         run: cat dragon.txt
