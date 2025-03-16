@@ -13,6 +13,8 @@ jobs:
         exclude:
           - os: windows-latest
             images: alpine
+          - os: windows-latest
+            images: ubuntu
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo Docker Details
